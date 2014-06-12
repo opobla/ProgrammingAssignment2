@@ -1,7 +1,10 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+## makeCacheMatrix acts like an object that holds the actual
+## matrix along with its inverse if it has ever been calculated
+## before, otherwise this inverse is set to NULL. If the matrix is
+## changed via the `set` funcion, then the inverse is void to NULL.
 
 makeCacheMatrix <- function(m = matrix()) {
   inv <- NULL
@@ -16,7 +19,11 @@ makeCacheMatrix <- function(m = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## cacheSolve checks if the makeCacheMatrix passed as the first
+## argument has the inverse matrix already calculated. If so, then
+## this value is used and a message indicating cache hit is issue. 
+## Otherwise the inverse is calculated, the result is stored in 
+## makeCacheMatrix for further use, and the inverse is returned.
 
 cacheSolve <- function(x, ...) {
   inver <- x$getInv()
